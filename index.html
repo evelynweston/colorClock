@@ -54,9 +54,10 @@ function colorClock(){
   seconds = '0' + seconds;
 }
   var clockFace = (hours + ' : ' + minutes + ' : ' + seconds);
-  var hexColor = '#' + (hours+10) + (minutes+10) + (seconds+10);
+  var hexColorOne = '#' + (hours) + (minutes) + (seconds);
+  var hexColorTwo = '#' + (seconds) + (hours) + (minutes);
   document.getElementById('clock').innerHTML = clockFace;
-  document.body.style.background = hexColor;
+  document.body.style.background = "linear-gradient(35deg, " + hexColorOne + ", " + hexColorTwo + ")";
   setTimeout(function() {
     colorClock();
     }, 1000);
